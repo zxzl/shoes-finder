@@ -1,5 +1,8 @@
 import * as React from "react";
 
+//@ts-ignore
+import styles from "./Shoes.module.css";
+
 interface Props {
   shoes?: any;
 }
@@ -7,6 +10,7 @@ interface Props {
 const Shoes: React.FC<Props> = ({ shoes = [] }) => {
   return (
     <div
+      className='columns is-mobile'
       style={{
         display: "flex",
         flexWrap: "wrap",
@@ -17,12 +21,10 @@ const Shoes: React.FC<Props> = ({ shoes = [] }) => {
         <a
           href={`https://abcmart.a-rt.com/product/new?prdtNo=${s.PRDT_NO}`}
           target='_blank'
-          className='has-text-black'
+          className='has-text-black column is-half-mobile is-4-tablet is-2-desktop is-1-widescreen'
           key={s.PRDT_NO}
         >
-          <div
-            style={{ width: "200px", paddingRight: "10px", paddingTop: "20px" }}
-          >
+          <div className={styles.shoe__item}>
             <img style={{ width: "100%" }} src={s.PRDT_IMAGE_URL}></img>
             <span>
               {`${s.BRAND_NAME}::${s.PRDT_NAME}`}::{s.PRDT_DC_PRICE}

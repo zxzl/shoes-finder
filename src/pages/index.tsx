@@ -25,7 +25,7 @@ const Home = ({ shoes, size }) => {
           15%
         </progress>
       )}
-      {!isLoading && <Shoes shoes={shoes} />}
+      {!isLoading && <Shoes shoes={shoes} size={size} />}
     </div>
   );
 };

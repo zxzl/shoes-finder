@@ -17,7 +17,7 @@ const Home = ({ shoes, size }) => (
 
 const memoizedShoes = memoizee(getAbcmartShoes, {
   promise: true,
-  maxAge: 30 * 60 * 1000 // in milliseconds
+  maxAge: 30 * 60 * 60 * 1000 // in milliseconds
 });
 
 export const getServerSideProps: GetServerSideProps = async ctx => {

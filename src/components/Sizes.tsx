@@ -24,7 +24,7 @@ const Sizes: React.FC<Props> = ({
         <Link key={s} href={`/?size=${s}`}>
           <button
             key={s}
-            className={`button ${s === size ? "is-info is-light-color" : ""}`}
+            className={`button ${s === size ? "is-info is-light" : ""}`}
           >
             <span>{s}</span>
           </button>

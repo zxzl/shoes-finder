@@ -2,7 +2,7 @@ import { getAbcmartShoes, parseProductOptionInline } from "./index";
 
 describe("ABC mart", () => {
   it("should fetch shoes", async () => {
-    const result = await getAbcmartShoes();
+    const result = await getAbcmartShoes(250);
     expect(Array.isArray(result)).toBeTruthy();
     expect(result[0]).toHaveProperty("PRDT_NAME");
     expect(result[0]).toHaveProperty("PRDT_DC_PRICE");

@@ -10,8 +10,8 @@ interface Props {
 
 const Sizes: React.FC<Props> = ({
   size,
-  start = 220,
-  end = 280,
+  start = 200,
+  end = 300,
   step = 10
 }) => {
   let sizes = [];

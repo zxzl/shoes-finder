@@ -4,6 +4,7 @@ const url =
   "https://abcmart.a-rt.com/display/search-word/result/list?searchPageType=category&ctgrNo=1000000246&brandNo=&gender=10000&page=1&brand=000003&brand=000050&brand=000048&shoesSize=250&chnnlNo=10001&ctgrNo=1000000246&gender=10000&ctgrLevel=2&leafCtgrYn=Y&pageColumn=4&sort=low&perPage=80&rdoProdGridModule=col4&_=1584776211235";
 
 export const getAbcmartShoes = async (size = 250) => {
+  console.debug(size, url);
   const resp = (await axios.get(url)).data;
   const shoes = resp.result.SEARCH;
   const shoesForMe = shoes.filter(p => {

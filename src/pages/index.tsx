@@ -1,3 +1,5 @@
+import * as memoizee from "memoizee";
+
 import Shoes from "../components/Shoes";
 import { getAbcmartShoes } from "../services/providers/abcmart";
 
@@ -6,8 +8,13 @@ import { getAbcmartShoes } from "../services/providers/abcmart";
 /* eslint-disable react/react-in-jsx-scope */
 const Home = ({ shoes }) => <Shoes shoes={shoes} />;
 
+const memoizedShoes = memoizee(getAbcmartShoes, {
+  promise: true,
+  maxAge: 10 * 60 * 1000 // in milliseconds
+});
+
 Home.getInitialProps = async ctx => {
-  const shoes = await getAbcmartShoes();
+  const shoes = await memoizedShoes();
   return {
     shoes
   };

@@ -25,7 +25,7 @@ const Shoes: React.FC<Props> = ({ shoes = [] }) => {
         <a
           href={`https://abcmart.a-rt.com/product/new?prdtNo=${s.PRDT_NO}`}
           target='_blank'
-          className='has-text-black column is-half-mobile is-4-tablet is-2-desktop is-1-widescreen'
+          className='has-text-black column is-half-mobile is-4-tablet is-3-desktop is-1-fullhd'
           key={s.PRDT_NO}
         >
           <div className={styles.shoe__item}>

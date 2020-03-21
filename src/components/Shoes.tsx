@@ -8,6 +8,10 @@ interface Props {
 }
 
 const Shoes: React.FC<Props> = ({ shoes = [] }) => {
+  const currencyFormatter = new Intl.NumberFormat("kr-KR", {
+    style: "currency",
+    currency: "KRW"
+  });
   return (
     <div
       className='columns is-mobile'
@@ -26,10 +30,11 @@ const Shoes: React.FC<Props> = ({ shoes = [] }) => {
         >
           <div className={styles.shoe__item}>
             <img style={{ width: "100%" }} src={s.PRDT_IMAGE_URL}></img>
-            <span>
-              {`${s.BRAND_NAME}::${s.PRDT_NAME}`}::{s.PRDT_DC_PRICE}
+            <span className='has-text-weight-semibold'>
+              {currencyFormatter.format(s.PRDT_DC_PRICE)}
             </span>
             <br></br>
+            <span>{`${s.BRAND_NAME} : ${s.PRDT_NAME}`}</span>
             <span className='tag is-light'>ABC마트</span>
           </div>
         </a>
